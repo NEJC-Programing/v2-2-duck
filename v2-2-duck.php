@@ -1,7 +1,7 @@
 <?php
 define("v2_ver", 0);
 
-define("url", "http://noam.hadar.net.nz");
+define("url", "test");
 
 define("jsonfile", url."/v2_database_".v2_ver.".json");
 
