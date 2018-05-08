@@ -1,5 +1,5 @@
 <?php
-define("v2_ver", 0);
+define("v2_ver", 1);
 
 define("url", "");
 
@@ -35,11 +35,13 @@ $cmd = $data->cmd;
 $v2 = $cmd->v2;
 $duck = $cmd->duck;
 $length = $code->cmds - 1;
-foreach($line as $data){
+foreach($data as $line){
     $i = 0;
     while($i != $length){
         $oufile .= "\r\n".str_replace($v2[$i],$duck[$i],$line);
         $i++;
     }
 }
+echo $outfile;
+file_put_contents(outfile, $outfile);
 echo "done";
