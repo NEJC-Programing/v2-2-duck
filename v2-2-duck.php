@@ -22,26 +22,31 @@ $code = $data->code;
 if ($code->ver != v2_ver){
     die("invaled config please change config url to a working one");
 }
+if (file_exists(outfile)){
+unlink(outfile);
+}
+$myfile = fopen(outfile, "w");
 
 $file = file_get_contents(infile);
 
-$data = explode(line_end,$file);
+$fdata = explode(line_end,$file);
 
-$outfile = "REM made by NHTHEBEST's v2-2-duck\r\n";
-$outfile .= "REM This Is BETA\r\n\r\n";
-
+fwrite($myfile, "REM made by NHTHEBEST's v2-2-duck\r\n");
+fwrite($myfile, "REM This Is BETA\r\n\r\n");
 
 $cmd = $data->cmd;
 $v2 = $cmd->v2;
 $duck = $cmd->duck;
 $length = $code->cmds - 1;
-foreach($data as $line){
+foreach($fdata as $line){
     $i = 0;
     while($i != $length){
-        $oufile .= "\r\n".str_replace($v2[$i],$duck[$i],$line);
+        fwrite($myfile, str_replace($v2[$i],$duck[$i],$line));
+        echo str_replace($v2[$i],$duck[$i],$line);
         $i++;
     }
 }
-echo $outfile;
-file_put_contents(outfile, $outfile);
+
+
+fclose($myfile);
 echo "done";
