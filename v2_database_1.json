@@ -1,0 +1,4 @@
+{"code":{"ver":0, "cmds":2}, "cmd":[
+    { "v2" :["STRING", "string", "DELAY", "delay","GUI","gui","DEFAULT_DELAY","default_delay","DEFAULTDELAY","defaultdelay","WINDOWS","windows","APP","app","menu","MENU","SHIFT","shift","ALT","alt","CONTROL","control","CTRL","ctrl"]},
+    {"duck":["STRING", "STRING", "DELAY", "DELAY","GUI","GUI","DEFAULT_DELAY","DEFAULT_DELAY","DEFAULTDELAY","DEFAULTDELAY","WINDOWS","WINDOWS","APP","APP","MENU","MENU","SHIFT","SHIFT","ALT","ALT","CONTROL","CONTROL","CTRL","CTRL"]}
+]}
