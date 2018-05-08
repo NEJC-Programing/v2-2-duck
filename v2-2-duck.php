@@ -27,14 +27,19 @@ $file = file_get_contents(infile);
 
 $data = explode(line_end,$file);
 
-$outfile = "REM made by NHTHEBEST's v2-2-duck\n";
-$outfile .= "REM This Is BETA\n\n";
+$outfile = "REM made by NHTHEBEST's v2-2-duck\r\n";
+$outfile .= "REM This Is BETA\r\n\r\n";
 
+
+$cmd = $data->cmd;
+$v2 = $cmd->v2;
+$duck = $cmd->duck;
+$length = $code->cmds - 1;
 foreach($line as $data){
-
+    $i = 0;
+    while($i != $length){
+        $oufile .= "\r\n".str_replace($v2[$i],$duck[$i],$line);
+        $i++;
+    }
 }
-
-
-function replace($line){
-    $line = str_replace($find,$replace,$line);
-}
+echo "done";
