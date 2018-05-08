@@ -1,9 +1,9 @@
 <?php
 define("v2_ver", 0);
 
-define("url", "test");
+define("url", "");
 
-define("jsonfile", url."/v2_database_".v2_ver.".json");
+define("jsonfile", url."v2_database_".v2_ver.".json");
 
 define("jsondata", file_get_contents(jsonfile));
 
