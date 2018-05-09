@@ -39,6 +39,23 @@ $v2 = $cmd->v2;
 $duck = $cmd->duck;
 $length = $code->cmds - 1;
 foreach($fdata as $line){
+    if (strpos($line, "function")===0){
+        $function = explode("function", $line,1);
+        $temp = explode("{", $function[0],1);
+        $function_name = $temp[0];
+        $temp = explode("}", $temp[1],1);
+
+    }
+}
+foreach($fdata as $line){
+    main_run($line);
+}
+
+
+fclose($myfile);
+echo "done";
+
+function main_run($line){
     $i = 0;
     while($i != $length){
         fwrite($myfile, str_replace($v2[$i],$duck[$i],$line));
@@ -46,7 +63,3 @@ foreach($fdata as $line){
         $i++;
     }
 }
-
-
-fclose($myfile);
-echo "done";
